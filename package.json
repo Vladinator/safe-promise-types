@@ -1,6 +1,6 @@
 {
   "name": "safe-promise-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple wrapper for use with promises that will ensure return types that indicate if it succeeeded or failed.",
   "main": "./dist/@types/index.js",
   "typings": "./dist/@types/index.d.ts",
