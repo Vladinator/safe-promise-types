@@ -1,4 +1,4 @@
-import SafePromise from '..';
+import SafePromise from '../@types';
 
 async function FakeServiceEndpoint(result: string, error: boolean = false): Promise<string> {
     return new Promise((resolve, reject) => {

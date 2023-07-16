@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const __1 = __importDefault(require(".."));
+const _types_1 = __importDefault(require("../@types"));
 async function FakeServiceEndpoint(result, error = false) {
     return new Promise((resolve, reject) => {
         if (!error) {
@@ -24,7 +24,7 @@ async function FakeServiceEndpoint(result, error = false) {
     catch (ex) {
         console.log("response2 threw", ex);
     }
-    const SafeFakeServiceEndpoint = (0, __1.default)(FakeServiceEndpoint);
+    const SafeFakeServiceEndpoint = (0, _types_1.default)(FakeServiceEndpoint);
     const response3 = await SafeFakeServiceEndpoint("Hello World");
     console.log("response3", response3);
     const response4 = await SafeFakeServiceEndpoint("Hello World", true);
