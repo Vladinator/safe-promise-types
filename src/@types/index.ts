@@ -13,9 +13,9 @@ export interface SafePromiseError extends SafePromiseResponse {
 }
 
 export default function SafePromise<T extends (...args: Parameters<T>) => Promise<ReturnType<T> extends Promise<infer T> ? T : never>>(fn: T) {
-    return async function (...args: Parameters<T>) {
+    return async function (this: any, ...args: Parameters<T>) {
         try {
-            const data = await fn(...args);
+            const data = await fn.apply(this, args);
             return { ok: true, return: data } as SafePromiseSuccess<typeof data>;
         } catch (error) {
             return { ok: false, error } as SafePromiseError;
