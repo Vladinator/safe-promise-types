@@ -7,17 +7,15 @@ This library is designed to make it easy to wrap any async/await function to mak
 ``````typescript
 import SafePromise from 'safe-promise-types';
 import crossFetch from 'cross-fetch';
-const data = await SafePromise(crossFetch)('//api.github.com/users/vladinator');
-if (data.ok) {
-    const profile = await SafePromise(data.result.json)();
-    if (profile.ok) {
-        console.log(profile.result.name);
+(async () => {
+    const data = await SafePromise(crossFetch)('//api.github.com/users/vladinator');
+    if (data.ok) {
+        const profile = await data.return.json();
+        console.log(profile.name);
     } else {
-        console.error(profile.error);
+        console.error(data.error);
     }
-} else {
-    console.error(data.error);
-}
+})();
 ``````
 
 ## Types
