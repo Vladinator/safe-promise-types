@@ -1,0 +1,32 @@
+{
+  "name": "safe-promise-types",
+  "version": "1.0.0",
+  "description": "A simple wrapper for use with promises that will ensure return types that indicate if it succeeeded or failed.",
+  "main": "./dist/index.js",
+  "typings": "./dist/@types/index.d.ts",
+  "directories": {
+    "src": "./src",
+    "test": "./src/test"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node ./dist/tests/index.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vladinator/safe-promise-types.git"
+  },
+  "author": "Vladinator <vladix@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vladinator/safe-promise-types/issues"
+  },
+  "homepage": "https://github.com/Vladinator/safe-promise-types",
+  "keywords": [
+    "promise"
+  ]
+}
